@@ -1,0 +1,18 @@
+image: docker:latest
+
+before_script:
+  - VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+
+services:
+  - docker:dind
+
+stages:
+  - build
+
+build_api:
+  stage: build
+  script:
+  - docker login -u $DOCKERLOGIN -p $DOCKERPASSWORD registry.hub.docker.com
+  - docker build -t moshedayan/kubectl:$VERSION .
+  - docker push moshedayan/kubectl:$VERSION
+
