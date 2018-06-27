@@ -9,5 +9,5 @@ jobs:
           name: Greeting
           command: echo Hello, world.
       - run:
-          name: Print the Current Time
-          command: date
+          name: Send notification
+          command: curl -i -X GET https://api.telegram.org/bot$TGTOKEN/sendMessage?chat_id=$CHATID&text="Job Finished"
