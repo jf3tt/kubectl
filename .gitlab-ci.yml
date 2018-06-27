@@ -13,7 +13,7 @@ stages:
 build_api:
   stage: build
   script:
-  - docker login -u $DOCKERLOGIN -p $DOCKERPASSWORD registry.hub.docker.com
+  - docker login -u $DOCKERLOGIN -p $DOCKERPASSWORD
   - docker build -t moshedayan/kubectl:$VERSION .
   - docker push moshedayan/kubectl:$VERSION
 
