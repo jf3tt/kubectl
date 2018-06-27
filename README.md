@@ -1,6 +1,6 @@
-<h4>Latest stable release of kubectl in docker container</h4>
+Latest stable release of kubectl in docker container
 
 Get it!
 ```
-docker pull moshedayan/kubectl
+docker pull moshedayan/kubectl:latest
 ```
