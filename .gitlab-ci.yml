@@ -1,6 +1,7 @@
 image: docker:latest
 
 before_script:
+  - apk add --update curl
   - VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
 
 services:
